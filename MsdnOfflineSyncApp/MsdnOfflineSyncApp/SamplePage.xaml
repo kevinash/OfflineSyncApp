@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+					   x:Class="MsdnOfflineSyncApp.SamplePage">
+  <StackLayout HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Spacing="0"  Padding="20,50,20,0">
+    <Label Text="Item" />
+    <Entry x:Name="todo" WidthRequest="300" HeightRequest="50" />
+    <Button Text="Add Locally" Clicked="add_Click"/>
+    <Button Text="Push" Clicked="push_Click"/>
+    <Button Text="Pull" Clicked="pull_Click"/>
+    <Button Text="Purge" Clicked="purge_Click"/>
+ </StackLayout>
+</ContentPage>
