@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PCLStorage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,9 @@ namespace MsdnOfflineSyncApp
 {
 	public partial class SamplePage
 	{
+        TransferQueue queue = new TransferQueue();
+        const string imageUrl = @"http://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Golden_Gate_Bridge%2C_SF_%28cropped%29.jpg/800px-Golden_Gate_Bridge%2C_SF_%28cropped%29.jpg";
+
 		public SamplePage ()
 		{
 			InitializeComponent ();
@@ -55,6 +59,21 @@ namespace MsdnOfflineSyncApp
         {
             // purge data
             await App.Model.PurgeAsync();
+        }
+
+        async void download_Click(object sender, EventArgs e)
+        {
+            var ok = await queue.AddInProcessAsync(new Job { Id = 1, Url = imageUrl, LocalFile = String.Format("image{0}.jpg", 1)});
+            await DisplayAlert("Download Complete", "Result " + ok, "OK", "Cancel");
+        }
+
+        async void download10_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                queue.AddOutProcess(new Job { Id = i, Url = imageUrl, LocalFile = String.Format("image{0}.jpg", i) });
+            }
+            await DisplayAlert("Downloads", "Submitted", "OK", "Cancel");
         }
 	}
 }

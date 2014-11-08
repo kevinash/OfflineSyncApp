@@ -38,7 +38,10 @@ namespace MsdnOfflineSyncApp
             {
                 var store = new MobileServiceSQLiteStore(syncStorePath);
                 store.DefineTable<SensorDataItem>();
-                await client.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
+                await client.SyncContext.InitializeAsync(
+                    store, 
+                    new ConflictHandler(client, ConflictResolutionPolicy.KeepLocal)
+                 );
             }
         }
 
@@ -47,7 +50,7 @@ namespace MsdnOfflineSyncApp
             try
             {
                 await this.client.SyncContext.PushAsync();
-           }
+            }
             catch (MobileServiceInvalidOperationException e)
             {
                 Console.Error.WriteLine(@"Sync Failed: {0}", e.Message);

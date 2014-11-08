@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\packages\SQLitePCL.3.8.5.1\build\wp8\SQLitePCL.props" Condition="Exists('..\..\packages\SQLitePCL.3.8.5.1\build\wp8\SQLitePCL.props')" />
+  <Import Project="..\..\packages\SQLitePCL.3.8.5.1\build\wp81\SQLitePCL.props" Condition="Exists('..\..\packages\SQLitePCL.3.8.5.1\build\wp81\SQLitePCL.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -13,20 +13,23 @@
     <RootNamespace>MsdnOfflineSyncApp.WinPhone</RootNamespace>
     <AssemblyName>MsdnOfflineSyncApp.WinPhone</AssemblyName>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
-    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
-    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <SilverlightVersion>
+    </SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
-    <XapFilename>PhoneApp1_$(Configuration)_$(Platform).xap</XapFilename>
+    <XapFilename>MsdnOfflineSyncApp.WinPhone_$(Configuration)_$(Platform).xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
     <SilverlightAppEntry>MsdnOfflineSyncApp.WinPhone.App</SilverlightAppEntry>
     <ValidateXaml>true</ValidateXaml>
-    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
-    <NuGetPackageImportStamp>16e63b5e</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>aa2b3f0f</NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <DefaultLanguage>en-US</DefaultLanguage>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,6 +62,7 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -69,6 +73,7 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
     <DebugSymbols>true</DebugSymbols>
@@ -80,6 +85,7 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
     <DebugType>pdbonly</DebugType>
@@ -90,6 +96,7 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget />
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -117,6 +124,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
@@ -128,6 +138,12 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\BadgeLogo.png" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\SquareTile150x150.png" />
+    <Content Include="Assets\SquareTile71x71.png" />
+    <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -143,6 +159,7 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\WideLogo.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
@@ -177,10 +194,10 @@
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SQLitePCL">
-      <HintPath>..\..\packages\SQLitePCL.3.8.5.1\lib\wp8\SQLitePCL.dll</HintPath>
+      <HintPath>..\..\packages\SQLitePCL.3.8.5.1\lib\wp81\SQLitePCL.dll</HintPath>
     </Reference>
     <Reference Include="SQLitePCL.Ext.WindowsPhone8.RuntimeProxy">
-      <HintPath>..\..\packages\SQLitePCL.3.8.5.1\lib\wp8\SQLitePCL.Ext.WindowsPhone8.RuntimeProxy.winmd</HintPath>
+      <HintPath>..\..\packages\SQLitePCL.3.8.5.1\lib\wp81\SQLitePCL.Ext.WindowsPhone8.RuntimeProxy.winmd</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
       <HintPath>..\..\packages\Microsoft.Net.Http.2.2.28\lib\sl4-windowsphone71\System.Net.Http.dll</HintPath>
@@ -192,13 +209,16 @@
       <HintPath>..\..\packages\Microsoft.Net.Http.2.2.28\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\..\packages\Xamarin.Forms.1.0.6186\lib\WP80\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.1.2.3.6257\lib\WP80\Xamarin.Forms.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform.WP8">
-      <HintPath>..\..\packages\Xamarin.Forms.1.0.6186\lib\WP80\Xamarin.Forms.Platform.WP8.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.1.2.3.6257\lib\WP80\Xamarin.Forms.Platform.WP8.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\..\packages\Xamarin.Forms.1.0.6186\lib\WP80\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.1.2.3.6257\lib\WP80\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -217,19 +237,19 @@
   </Target>
   -->
   <ProjectExtensions />
-  <Import Project="..\..\packages\Xamarin.Forms.1.0.6186\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.0.6186\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.1.0.6186\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.1.0.6186\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets'))" />
-    <Error Condition="!Exists('..\..\packages\SQLitePCL.3.8.5.1\build\wp8\SQLitePCL.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\SQLitePCL.3.8.5.1\build\wp8\SQLitePCL.props'))" />
-    <Error Condition="!Exists('..\..\packages\SQLitePCL.3.8.5.1\build\wp8\SQLitePCL.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\SQLitePCL.3.8.5.1\build\wp8\SQLitePCL.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.1.2.3.6257\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.1.2.3.6257\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets'))" />
+    <Error Condition="!Exists('..\..\packages\SQLitePCL.3.8.5.1\build\wp81\SQLitePCL.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\SQLitePCL.3.8.5.1\build\wp81\SQLitePCL.props'))" />
+    <Error Condition="!Exists('..\..\packages\SQLitePCL.3.8.5.1\build\wp81\SQLitePCL.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\SQLitePCL.3.8.5.1\build\wp81\SQLitePCL.targets'))" />
   </Target>
+  <Import Project="..\..\packages\Xamarin.Forms.1.2.3.6257\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.2.3.6257\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" />
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
     <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
     <Error Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
   </Target>
-  <Import Project="..\..\packages\SQLitePCL.3.8.5.1\build\wp8\SQLitePCL.targets" Condition="Exists('..\..\packages\SQLitePCL.3.8.5.1\build\wp8\SQLitePCL.targets')" />
+  <Import Project="..\..\packages\SQLitePCL.3.8.5.1\build\wp81\SQLitePCL.targets" Condition="Exists('..\..\packages\SQLitePCL.3.8.5.1\build\wp81\SQLitePCL.targets')" />
 </Project>

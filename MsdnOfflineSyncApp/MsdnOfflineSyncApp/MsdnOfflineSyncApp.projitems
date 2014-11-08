@@ -10,12 +10,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BlobTransfer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ConflictHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IBackgroundTransfer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SamplePage.xaml.cs">
       <DependentUpon>SamplePage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)SensorDataItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SensorModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TransferQueue.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)SamplePage.xaml">
